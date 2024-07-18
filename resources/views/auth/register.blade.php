@@ -58,6 +58,11 @@
             margin-bottom: 15px;
             text-align: center;
         }
+        .login_btn{
+            margin: 10px 0;
+            padding: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -89,6 +94,8 @@
                 <option value="admin">Admin</option>
             </select>
             <button type="submit">Register</button>
+            <div class="login_btn">Already have an account? <a href="{{ route('login') }}">Login Now</a>
+            </div>
         </form>
     </div>
 </body>

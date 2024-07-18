@@ -56,14 +56,20 @@
             margin-bottom: 15px;
             text-align: center;
         }
+        .register_btn {
+            margin: 10px 0;
+            padding: 10px;
+            text-align: center;
+        }
+        
     </style>
 </head>
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        @if (session('error'))
+        @if ($errors->any())
             <div class="error">
-                {{ session('error') }}
+                {{ $errors->first('email') }}
             </div>
         @endif
         <form method="POST" action="{{ route('login') }}">
@@ -73,6 +79,7 @@
             <label for="password">Password:</label>
             <input type="password" name="password" required>
             <button type="submit">Login</button>
+            <div class="register_btn">Don't have an account? <a href="{{ route('register') }}">Register Here</a></div>
         </form>
     </div>
 </body>
